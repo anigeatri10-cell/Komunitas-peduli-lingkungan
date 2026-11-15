@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fcf8f0" />
+    <title>The Wedding of G &amp; R | 20 Desember 2026</title>
+    <meta
+      name="description"
+      content="Undangan pernikahan G &amp; R, Minggu 20 Desember 2026. Perpaduan adat Jawa dan Sunda."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <div id="sampul" class="cover" role="dialog" aria-modal="true" aria-label="Sampul undangan pernikahan G dan R">
+      <div class="scene cover__scene">
+        <img class="scene__art scene__art--top" src="./img/bunga-atas.png" alt="" width="1376" height="768" />
+        <img class="scene__art scene__art--bottom" src="./img/panorama-bawah.png" alt="" width="1376" height="768" />
+
+        <p class="monogram" aria-hidden="true">
+          <span>G</span>
+          <span class="monogram__line"></span>
+          <span>R</span>
+        </p>
+        <p class="scene__eyebrow">The Wedding of</p>
+        <p class="names cover__names">G <span class="names__amp">&amp;</span> R</p>
+        <p class="cover__to">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+        <p id="nama-tamu" class="cover__guest">Tamu Undangan</p>
+        <button id="buka-undangan" type="button" class="btn">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"
+            />
+            <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
+          </svg>
+          Buka Undangan
+        </button>
+      </div>
+    </div>
+
+    <div id="halaman" class="page">
+      <header id="beranda" class="scene hero" tabindex="-1">
+        <img class="scene__art scene__art--top" src="./img/bunga-atas.png" alt="" width="1376" height="768" />
+        <img class="scene__art scene__art--bottom" src="./img/panorama-bawah.png" alt="" width="1376" height="768" />
+
+        <p class="eyebrow">Sugeng Rawuh &middot; Wilujeng Sumping</p>
+        <p class="scene__eyebrow">The Wedding of</p>
+        <h1 class="names hero__names">G <span class="names__amp">&amp;</span> R</h1>
+        <div class="ornament" aria-hidden="true"><span></span></div>
+        <p class="hero__date">
+          <time datetime="2026-12-20">Minggu, 20 Desember 2026</time>
+        </p>
+        <p class="hero__note">Dua hati, dua budaya, satu ikatan suci dalam balutan adat Jawa dan Sunda.</p>
+      </header>
+
+      <main>
+        <section class="section section--dark" aria-label="Ayat suci">
+          <blockquote class="verse reveal">
+            <div class="ornament" aria-hidden="true"><span></span></div>
+            <p class="verse__text">
+              &ldquo;Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari
+              jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
+              kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi
+              kaum yang berpikir.&rdquo;
+            </p>
+            <footer class="verse__source">QS. Ar-Rum: 21</footer>
+          </blockquote>
+        </section>
+
+        <section class="section section--soft" aria-labelledby="judul-mempelai">
+          <div class="section__header reveal">
+            <p class="eyebrow">Mempelai</p>
+            <h2 id="judul-mempelai" class="section__title">G &amp; R</h2>
+            <div class="ornament" aria-hidden="true"><span></span></div>
+            <p class="section__lead">
+              Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah, semoga rida-Mu tercurah
+              mengiringi pernikahan kami.
+            </p>
+          </div>
+
+          <!-- Ganti huruf di dalam .person__photo dengan <img src="foto.jpg" alt="Foto mempelai" /> -->
+          <div class="couple">
+            <article class="person reveal">
+              <div class="person__photo" aria-hidden="true">G</div>
+              <h3 class="person__name">Nama Lengkap G</h3>
+              <p class="person__role">Putra/Putri dari</p>
+              <p class="person__parents">Bapak Nama Ayah &amp; Ibu Nama Ibu</p>
+            </article>
+
+            <p class="couple__amp reveal" aria-hidden="true">&amp;</p>
+
+            <article class="person reveal">
+              <div class="person__photo" aria-hidden="true">R</div>
+              <h3 class="person__name">Nama Lengkap R</h3>
+              <p class="person__role">Putra/Putri dari</p>
+              <p class="person__parents">Bapak Nama Ayah &amp; Ibu Nama Ibu</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section--dark" aria-labelledby="judul-hitung-mundur">
+          <div class="section__header reveal">
+            <p class="eyebrow">Menuju Hari Bahagia</p>
+            <h2 id="judul-hitung-mundur" class="section__title">Menghitung Hari</h2>
+            <div class="ornament" aria-hidden="true"><span></span></div>
+          </div>
+
+          <div class="countdown reveal" role="timer" aria-label="Hitung mundur menuju hari pernikahan">
+            <div class="countdown__item">
+              <span id="cd-hari" class="countdown__value">00</span>
+              <span class="countdown__label">Hari</span>
+            </div>
+            <div class="countdown__item">
+              <span id="cd-jam" class="countdown__value">00</span>
+              <span class="countdown__label">Jam</span>
+            </div>
+            <div class="countdown__item">
+              <span id="cd-menit" class="countdown__value">00</span>
+              <span class="countdown__label">Menit</span>
+            </div>
+            <div class="countdown__item">
+              <span id="cd-detik" class="countdown__value">00</span>
+              <span class="countdown__label">Detik</span>
+            </div>
+          </div>
+          <p id="cd-pesan" class="countdown__message" role="status"></p>
+
+          <div class="countdown__action reveal">
+            <a
+              class="btn btn--light"
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Pernikahan%20G%20%26%20R&amp;dates=20261220T010000Z/20261220T070000Z&amp;details=Akad%20Nikah%2008.00%20WIB%2C%20Resepsi%2011.00%20WIB"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Simpan ke Kalender
+            </a>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="judul-acara">
+          <div class="section__header reveal">
+            <p class="eyebrow">Rangkaian Acara</p>
+            <h2 id="judul-acara" class="section__title">Akad &amp; Resepsi</h2>
+            <div class="ornament" aria-hidden="true"><span></span></div>
+          </div>
+
+          <div class="events">
+            <article class="event reveal">
+              <p class="event__tag">Adat Sunda</p>
+              <h3 class="event__title">Akad Nikah</h3>
+              <dl class="event__details">
+                <div>
+                  <dt>Hari &amp; Tanggal</dt>
+                  <dd>Minggu, 20 Desember 2026</dd>
+                </div>
+                <div>
+                  <dt>Waktu</dt>
+                  <dd>08.00 &ndash; 10.00 WIB</dd>
+                </div>
+                <div>
+                  <dt>Tempat</dt>
+                  <dd>
+                    Nama Tempat Akad
+                    <small>Alamat lengkap, Kota</small>
+                  </dd>
+                </div>
+              </dl>
+              <p class="event__custom">
+                Diawali upacara Mapag Panganten dan ditutup dengan Saweran sebagai ungkapan syukur dan doa.
+              </p>
+            </article>
+
+            <article class="event reveal">
+              <p class="event__tag">Adat Jawa</p>
+              <h3 class="event__title">Resepsi</h3>
+              <dl class="event__details">
+                <div>
+                  <dt>Hari &amp; Tanggal</dt>
+                  <dd>Minggu, 20 Desember 2026</dd>
+                </div>
+                <div>
+                  <dt>Waktu</dt>
+                  <dd>11.00 &ndash; 14.00 WIB</dd>
+                </div>
+                <div>
+                  <dt>Tempat</dt>
+                  <dd>
+                    Nama Tempat Resepsi
+                    <small>Alamat lengkap, Kota</small>
+                  </dd>
+                </div>
+              </dl>
+              <p class="event__custom">
+                Dibuka dengan prosesi Panggih dan Kirab Pengantin, dilanjutkan ramah tamah bersama keluarga.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section--soft" aria-labelledby="judul-kisah">
+          <div class="section__header reveal">
+            <p class="eyebrow">Kisah Kami</p>
+            <h2 id="judul-kisah" class="section__title">Perjalanan Cinta</h2>
+            <div class="ornament" aria-hidden="true"><span></span></div>
+          </div>
+
+          <ol class="story">
+            <li class="story__item reveal">
+              <h3 class="story__title">Perkenalan</h3>
+              <p class="story__date">Tanggal perkenalan</p>
+              <p class="story__text">Tuliskan cerita singkat tentang awal perkenalan G dan R di sini.</p>
+            </li>
+            <li class="story__item reveal">
+              <h3 class="story__title">Lamaran</h3>
+              <p class="story__date">Tanggal lamaran</p>
+              <p class="story__text">Tuliskan cerita singkat tentang momen lamaran di sini.</p>
+            </li>
+            <li class="story__item reveal">
+              <h3 class="story__title">Pernikahan</h3>
+              <p class="story__date">20 Desember 2026</p>
+              <p class="story__text">
+                Dengan penuh rasa syukur, kami mengikat janji suci dan memulai lembaran baru sebagai suami istri.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" aria-labelledby="judul-galeri">
+          <div class="section__header reveal">
+            <p class="eyebrow">Galeri</p>
+            <h2 id="judul-galeri" class="section__title">Potret Kebersamaan</h2>
+            <div class="ornament" aria-hidden="true"><span></span></div>
+          </div>
+
+          <!-- Ganti isi tiap <figure> dengan <img src="foto.jpg" alt="Deskripsi foto" /> -->
+          <div class="gallery reveal">
+            <figure class="gallery__item" role="img" aria-label="Placeholder foto 1">
+              <span class="gallery__label" aria-hidden="true">Foto 1</span>
+            </figure>
+            <figure class="gallery__item" role="img" aria-label="Placeholder foto 2">
+              <span class="gallery__label" aria-hidden="true">Foto 2</span>
+            </figure>
+            <figure class="gallery__item" role="img" aria-label="Placeholder foto 3">
+              <span class="gallery__label" aria-hidden="true">Foto 3</span>
+            </figure>
+            <figure class="gallery__item" role="img" aria-label="Placeholder foto 4">
+              <span class="gallery__label" aria-hidden="true">Foto 4</span>
+            </figure>
+            <figure class="gallery__item" role="img" aria-label="Placeholder foto 5">
+              <span class="gallery__label" aria-hidden="true">Foto 5</span>
+            </figure>
+            <figure class="gallery__item" role="img" aria-label="Placeholder foto 6">
+              <span class="gallery__label" aria-hidden="true">Foto 6</span>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section section--dark" aria-labelledby="judul-hadiah">
+          <div class="section__header reveal">
+            <p class="eyebrow">Tanda Kasih</p>
+            <h2 id="judul-hadiah" class="section__title">Wedding Gift</h2>
+            <div class="ornament" aria-hidden="true"><span></span></div>
+            <p class="section__lead">
+              Tanpa mengurangi rasa hormat, bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih untuk kami, dapat
+              melalui:
+            </p>
+          </div>
+
+          <div class="gifts">
+            <article class="gift reveal">
+              <p class="gift__bank">Nama Bank</p>
+              <p class="gift__number">0000 0000 00</p>
+              <p class="gift__holder">a.n. Nama Pemilik Rekening</p>
+              <button type="button" class="btn btn--light" data-salin="0000000000">Salin Nomor</button>
+            </article>
+            <article class="gift reveal">
+              <p class="gift__bank">Nama Bank</p>
+              <p class="gift__number">0000 0000 00</p>
+              <p class="gift__holder">a.n. Nama Pemilik Rekening</p>
+              <button type="button" class="btn btn--light" data-salin="0000000000">Salin Nomor</button>
+            </article>
+          </div>
+
+          <div class="prayer reveal">
+            <div class="ornament" aria-hidden="true"><span></span></div>
+            <p class="prayer__text">Barakallahu laka wa baraka &lsquo;alaika wa jama&rsquo;a bainakuma fii khair</p>
+            <p class="prayer__meaning">
+              &ldquo;Mudah-mudahan Allah memberkahi engkau dalam segala hal (yang baik) dan mempersatukan kamu berdua
+              dalam kebaikan.&rdquo;
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="judul-rsvp">
+          <div class="section__header reveal">
+            <p class="eyebrow">Ucapan, Doa &amp; Konfirmasi Kehadiran</p>
+            <h2 id="judul-rsvp" class="section__title">RSVP &amp; Wishes</h2>
+            <div class="ornament" aria-hidden="true"><span></span></div>
+          </div>
+
+          <form id="form-rsvp" class="form reveal">
+            <div class="field">
+              <label class="field__label" for="nama">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" autocomplete="name" maxlength="80" required />
+            </div>
+
+            <fieldset class="field">
+              <legend class="field__label">Kehadiran</legend>
+              <div class="choices">
+                <label class="choice">
+                  <input type="radio" name="kehadiran" value="hadir" required />
+                  <span>Hadir</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="kehadiran" value="tidak" />
+                  <span>Tidak Hadir</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label class="field__label" for="jumlah">Jumlah Tamu</label>
+              <select id="jumlah" name="jumlah">
+                <option value="1">1 orang</option>
+                <option value="2">2 orang</option>
+                <option value="3">3 orang</option>
+                <option value="4">4 orang</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="ucapan">Ucapan &amp; Doa (opsional)</label>
+              <textarea id="ucapan" name="ucapan" maxlength="300"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Kirim</button>
+            <p id="rsvp-status" class="form__status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="wishes reveal">
+            <h3 class="wishes__title"><span id="ucapan-jumlah">0</span> Ucapan</h3>
+            <p id="ucapan-kosong" class="wishes__empty">Belum ada ucapan. Jadilah yang pertama.</p>
+            <ul id="ucapan-list" class="wishes__list"></ul>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="scene closing">
+          <img
+            class="scene__art scene__art--bottom"
+            src="./img/panorama-bawah.png"
+            alt=""
+            width="1376"
+            height="768"
+            loading="lazy"
+          />
+          <p class="closing__text">
+            Suatu kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa
+            restu kepada kami.
+          </p>
+          <p class="closing__thanks">Matur Nuwun &middot; Hatur Nuhun</p>
+          <p class="monogram" aria-hidden="true">
+            <span>G</span>
+            <span class="monogram__line"></span>
+            <span>R</span>
+          </p>
+        </div>
+        <p class="copyright">&copy; <span id="tahun">2026</span> G &amp; R &middot; 20 Desember 2026</p>
+      </footer>
+    </div>
+  </body>
+</html>

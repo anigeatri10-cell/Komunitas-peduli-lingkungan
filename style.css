@@ -1,0 +1,1013 @@
+:root {
+  --cream: #f5ecdc;
+  --cream-soft: #fcf8f0;
+  --brown-dark: #3b281b;
+  --brown: #6b4a33;
+  --gold: #a8804a;
+  --line: rgba(107, 74, 51, 0.28);
+  --line-light: rgba(245, 236, 220, 0.28);
+
+  --font-display: "Elsie Swash Caps", "Times New Roman", serif;
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Motif kawung (Jawa): empat kelopak lonjong yang bertemu di satu titik */
+  --kawung: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23a8804a' stroke-opacity='.5'%3E%3Cellipse cx='15' cy='15' rx='13' ry='7' transform='rotate(45 15 15)'/%3E%3Cellipse cx='45' cy='15' rx='13' ry='7' transform='rotate(-45 45 15)'/%3E%3Cellipse cx='15' cy='45' rx='13' ry='7' transform='rotate(-45 15 45)'/%3E%3Cellipse cx='45' cy='45' rx='13' ry='7' transform='rotate(45 45 45)'/%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  /* Motif rereng (Sunda): garis lereng diagonal */
+  --rereng: repeating-linear-gradient(
+    135deg,
+    rgba(245, 236, 220, 0.07) 0 2px,
+    transparent 2px 16px
+  );
+
+  /* Ruang kosong agar teks tidak menimpa ilustrasi bunga dan wayang */
+  --art-top: min(39vw, 11.75rem);
+  --art-bottom: min(46vw, 13.75rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+html.is-locked {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--brown-dark);
+  background-color: var(--brown);
+  background-image: var(--rereng);
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+ul,
+ol,
+figure,
+fieldset,
+blockquote {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Undangan tampil sebagai satu kolom selebar layar HP, juga di layar besar */
+.page {
+  max-width: 30rem;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--cream);
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Elemen bersama ---------- */
+
+.section {
+  padding: 4.5rem 1.5rem;
+}
+
+.section--soft {
+  background: var(--cream-soft);
+}
+
+.section--dark {
+  color: var(--cream);
+  background-color: var(--brown-dark);
+  background-image: var(--rereng);
+}
+
+.section__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.25rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--brown);
+}
+
+.section--dark .eyebrow {
+  color: var(--cream);
+  opacity: 0.8;
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.section__lead {
+  text-wrap: pretty;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  color: var(--gold);
+}
+
+.ornament::before,
+.ornament::after {
+  content: "";
+  width: 3.5rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.ornament span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  padding: 0.7rem 1.9rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--cream-soft);
+  background: linear-gradient(120deg, var(--brown), var(--brown-dark));
+  border: 1px solid rgba(252, 248, 240, 0.65);
+  border-radius: 999px;
+  box-shadow: 0 0.4rem 1rem rgba(59, 40, 27, 0.3);
+  cursor: pointer;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+.btn svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.btn--light {
+  color: var(--cream);
+  background: transparent;
+  border-color: var(--cream);
+  box-shadow: none;
+}
+
+.btn--light:hover {
+  filter: none;
+  color: var(--brown-dark);
+  background: var(--cream);
+}
+
+/* ---------- Latar berilustrasi (sampul, hero, penutup) ---------- */
+
+.scene {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: var(--art-top) 1.5rem var(--art-bottom);
+  overflow: hidden;
+  text-align: center;
+  background: var(--cream-soft);
+}
+
+.scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--kawung);
+  opacity: 0.4;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 22%, #000 38%, #000 54%, transparent 70%);
+  mask-image: linear-gradient(to bottom, transparent 22%, #000 38%, #000 54%, transparent 70%);
+}
+
+/* Gambar berlatar putih; multiply membuat putihnya menyatu dengan warna krem */
+.scene__art {
+  position: absolute;
+  left: 50%;
+  z-index: -1;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  mix-blend-mode: multiply;
+  transform: translateX(-50%);
+}
+
+.scene__art--top {
+  top: 0;
+  width: 115%;
+}
+
+.scene__art--bottom {
+  bottom: 0;
+  width: 110%;
+}
+
+.scene__eyebrow {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  font-family: var(--font-display);
+  font-size: 4.75rem;
+  line-height: 1;
+  color: var(--brown);
+}
+
+.monogram__line {
+  width: 1px;
+  height: 1.15em;
+  background: var(--gold);
+}
+
+.names {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  color: var(--brown);
+}
+
+.names__amp {
+  font-size: 0.7em;
+  color: var(--gold);
+}
+
+/* ---------- Sampul ---------- */
+
+.cover {
+  display: none;
+}
+
+.js .cover {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: block;
+  max-width: 30rem;
+  margin: 0 auto;
+  overflow-y: auto;
+  background: var(--cream-soft);
+  transition: transform 0.9s cubic-bezier(0.7, 0, 0.2, 1), opacity 0.9s ease;
+}
+
+.js .cover.is-open {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.js .cover[hidden] {
+  display: none;
+}
+
+.cover__scene {
+  min-height: 100%;
+}
+
+.cover__names {
+  font-size: 2.6rem;
+}
+
+.cover__to {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.cover__guest {
+  max-width: 20rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.hero:focus {
+  outline: none;
+}
+
+.hero__names {
+  font-size: clamp(4rem, 19vw, 5.5rem);
+}
+
+.hero__date {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.hero__note {
+  max-width: 19rem;
+  font-size: 0.9rem;
+  color: var(--brown);
+  text-wrap: balance;
+}
+
+/* ---------- Ayat ---------- */
+
+.verse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.verse__text {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.9;
+  text-wrap: pretty;
+}
+
+.verse__source {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+/* ---------- Mempelai ---------- */
+
+.couple {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.couple__amp {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.person__photo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11rem;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--cream);
+  background-color: var(--brown);
+  background-image: var(--rereng);
+  border-radius: 999px 999px 0 0;
+  box-shadow: 0 0 0 0.35rem var(--cream-soft), 0 0 0 calc(0.35rem + 1px) var(--gold);
+}
+
+.person__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person__name {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  line-height: 1.2;
+  color: var(--brown);
+}
+
+.person__role {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brown);
+}
+
+.person__parents {
+  max-width: 18rem;
+  line-height: 1.6;
+}
+
+/* ---------- Countdown ---------- */
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.countdown__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.1rem 0.25rem;
+  border: 1px solid var(--line-light);
+  border-radius: 0.75rem;
+}
+
+.countdown__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 8vw, 2.4rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown__label {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.countdown__message {
+  margin-top: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.countdown__message:empty {
+  display: none;
+}
+
+.countdown__action {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* ---------- Acara ---------- */
+
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.event {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: var(--cream-soft);
+  border: 1px solid var(--gold);
+  border-radius: 1rem;
+}
+
+.event::before {
+  content: "";
+  position: absolute;
+  inset: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  pointer-events: none;
+}
+
+.event__tag {
+  padding: 0.3rem 0.9rem;
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream-soft);
+  background: var(--brown);
+  border-radius: 999px;
+}
+
+.event__title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  line-height: 1.15;
+  color: var(--brown);
+}
+
+.event__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.event__details dt {
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brown);
+}
+
+.event__details dd {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.event__details dd small {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--brown);
+}
+
+.event__custom {
+  font-size: 0.9rem;
+  color: var(--brown);
+  text-wrap: pretty;
+}
+
+/* ---------- Kisah ---------- */
+
+.story {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  padding-left: 1.75rem;
+  border-left: 1px solid var(--gold);
+}
+
+.story__item {
+  position: relative;
+}
+
+.story__item::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  left: calc(-1.75rem - 0.3rem - 0.5px);
+  width: 0.6rem;
+  height: 0.6rem;
+  background: var(--cream-soft);
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+.story__title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: var(--brown);
+}
+
+.story__date {
+  margin: 0.25rem 0 0.6rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brown);
+}
+
+.story__text {
+  text-wrap: pretty;
+}
+
+/* ---------- Galeri ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+.gallery__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  color: var(--brown);
+  background-color: var(--cream-soft);
+  background-image: var(--kawung);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+}
+
+.gallery__item:nth-child(odd) {
+  color: var(--cream);
+  background-color: var(--brown);
+  background-image: var(--rereng);
+  border-color: var(--brown);
+}
+
+.gallery__item:first-child,
+.gallery__item:last-child {
+  grid-column: span 2;
+  aspect-ratio: 16 / 10;
+}
+
+.gallery__item:last-child {
+  color: var(--cream);
+  background-color: var(--brown-dark);
+  background-image: var(--rereng);
+  border-color: var(--brown-dark);
+}
+
+.gallery__item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__label {
+  padding: 0.25rem 0.9rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+.gallery__item:nth-child(even):not(:last-child) .gallery__label {
+  background: var(--cream);
+}
+
+/* ---------- Hadiah ---------- */
+
+.gifts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gift {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  border: 1px solid var(--line-light);
+  border-radius: 1rem;
+}
+
+.gift__bank {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.gift__number {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+.gift__holder {
+  margin-bottom: 0.9rem;
+}
+
+.prayer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.prayer__text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.prayer__meaning {
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.9;
+  text-wrap: pretty;
+}
+
+/* ---------- RSVP ---------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  border: 0;
+}
+
+.field__label {
+  padding: 0;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brown);
+}
+
+.field input[type="text"],
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--brown-dark);
+  background: var(--cream-soft);
+  border: 1px solid rgba(107, 74, 51, 0.5);
+  border-radius: 0.75rem;
+}
+
+.field textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.field select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline-offset: 1px;
+  border-color: var(--brown-dark);
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+.choice {
+  position: relative;
+  display: block;
+}
+
+.choice input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.choice span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  background: var(--cream-soft);
+  border: 1px solid rgba(107, 74, 51, 0.5);
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.choice input:checked + span {
+  color: var(--cream-soft);
+  background: var(--brown);
+  border-color: var(--brown);
+}
+
+.choice input:focus-visible + span {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.form__status {
+  padding: 1rem 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  background: var(--cream-soft);
+  border: 1px solid var(--gold);
+  border-radius: 0.75rem;
+}
+
+.form__status:empty {
+  display: none;
+}
+
+.wishes {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.wishes__title {
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--brown);
+}
+
+.wishes__empty {
+  text-align: center;
+  color: var(--brown);
+}
+
+.wishes__empty[hidden] {
+  display: none;
+}
+
+.wishes__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.wish {
+  padding: 1rem 1.25rem;
+  background: var(--cream-soft);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+}
+
+.wish__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.wish__name {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.wish__status {
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brown);
+}
+
+.wish__text {
+  margin-top: 0.35rem;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Penutup ---------- */
+
+.closing {
+  padding-top: 4.5rem;
+}
+
+.closing::before {
+  display: none;
+}
+
+.closing__text {
+  max-width: 22rem;
+  text-wrap: pretty;
+}
+
+.closing__thanks {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.closing .monogram {
+  margin-top: 0.5rem;
+  font-size: 3.5rem;
+}
+
+.copyright {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--cream);
+  background-color: var(--brown-dark);
+  background-image: var(--rereng);
+}
+
+/* ---------- Animasi muncul ---------- */
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .cover,
+  .btn {
+    transition: none;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
